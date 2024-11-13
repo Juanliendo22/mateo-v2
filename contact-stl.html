@@ -241,63 +241,111 @@
             <!-- contact info end -->
 
             <!-- contact form -->
-            <div class="">
-              <div class="container">
-                <h2
-                  class="mil-display3 mil-rubber mil-mb90 mil-m1 mil-tac mil-up"
-                >
-                  Hablemos <span class="mil-a1">Ya </span>
-                </h2>
-                <form class="mil-stl mil-mb130">
-                  <div class="row mil-aic">
-                    <div class="col-md-6 mil-mb30 mil-up">
-                      <input type="text" placeholder="Dinos tu nombre" />
-                    </div>
-                    <div class="col-md-6 mil-mb30 mil-up">
-                      <input type="text" placeholder="servicio requerido" />
-                    </div>
-                    <div class="col-md-12 mil-mb30 mil-up">
-                      <textarea
-                        placeholder="Desarrolle sobre su duda"
-                      ></textarea>
-                    </div>
-                    <div class="col-md-6 mil-mb30">
-                      <p class="mil-text-sm mil-up">
-                        *We promise not to disclose your personal information to
-                        third parties.
-                      </p>
-                    </div>
-                    <div
-                      class="col-md-6 mil-mb30 mil-768-mb0 mil-jce mil-768-jcc mil-up"
-                    >
-                      <button class="mil-btn mil-a2 mil-c-gone">
-                        Send message
-                      </button>
-                    </div>
-                  </div>
-                </form>
-                <div class="row mil-aic mil-jcb mil-no-g">
-                  <div class="col-lg-6">
-                    <div
-                      class="mil-button-pad mil-a1 mil-jst mil-up"
-                      style="display: block"
-                    ></div>
-                  </div>
-                  <div class="col-lg-6 mil-992-gone">
-                    <div class="mil-text-pad">
-                      <p class="mil-text-sm mil-up">
-                        By clicking the send button, you agree to the <br /><a
-                          href="contact-stl.html"
-                          class="mil-text-link mil-a2 mil-c-gone"
-                          >rules for processing personal data</a
-                        >.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- contact form end -->
+           <!-- Tu formulario de contacto -->
+<div class="">
+  <div class="container">
+    <h2 class="mil-display3 mil-rubber mil-mb90 mil-m1 mil-tac mil-up">
+      Hablemos <span class="mil-a1">Ya </span>
+    </h2>
+    <form class="mil-stl mil-mb130" id="contactForm">
+      <div class="row mil-aic">
+        <!-- Nombre Input -->
+        <div class="col-md-6 mil-mb30 mil-up">
+          <input type="text" id="name" class="form-control" placeholder="Dinos tu nombre" />
+        </div>
+
+        <!-- Título para las opciones -->
+        <div class="col-md-12 mil-mb30">
+          <h5 class="mil-up">Selecciona los servicios de tu interés</h5>
+        </div>
+
+        <!-- Opciones de radio -->
+        <div class="col-md-12 radio-inputs">
+          <label class="d-block">
+            <input class="radio-input" type="radio" name="service" value="Páginas web">
+            <span class="radio-tile">
+              <span class="radio-icon">
+                <i class="fa fa-laptop-code"></i>
+              </span>
+              <span class="radio-label">Páginas web</span>
+            </span>
+          </label>
+
+          <label class="d-block">
+            <input class="radio-input" type="radio" name="service" value="Manejo de redes">
+            <span class="radio-tile">
+              <span class="radio-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="radio-label">Manejo de redes</span>
+            </span>
+          </label>
+
+          <label class="d-block">
+            <input checked="" class="radio-input" type="radio" name="service" value="Creación de marca">
+            <span class="radio-tile">
+              <span class="radio-icon">
+                <i class="fa fa-paint-brush"></i>
+              </span>
+              <span class="radio-label">Creación de marca</span>
+            </span>
+          </label>
+
+          <label class="d-block">
+            <input class="radio-input" type="radio" name="service" value="Google Analytics">
+            <span class="radio-tile">
+              <span class="radio-icon">
+                <i class="fa fa-chart-line"></i>
+              </span>
+              <span class="radio-label">Google Analytics</span>
+            </span>
+          </label>
+        </div>
+
+        <!-- Área de texto -->
+        <div class="col-md-12 mil-mb30 mil-up">
+          <textarea class="form-control" id="message" placeholder="Desarrolle sobre su duda"></textarea>
+        </div>
+
+        <!-- Botón de envío -->
+        <div class="col-md-6 mil-mb30 mil-768-mb0 mil-jce mil-768-jcc mil-up">
+          <button type="submit" class="mil-btn mil-a2 mil-c-gone">
+            Send message
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Script para manejar el envío de datos a WhatsApp -->
+<script>
+  // Escuchar el evento de envío del formulario
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevenir el envío del formulario por defecto
+
+    // Obtener los valores del formulario
+    const name = document.getElementById("name").value;
+    const message = document.getElementById("message").value;
+    const service = document.querySelector('input[name="service"]:checked').value;
+
+    // Crear el mensaje estilizado para WhatsApp con códigos Unicode para los emojis
+    const whatsappMessage = `
+      *Nuevo mensaje desde el formulario de contacto:*\n\n
+      *🔹 Nombre:* ${name}\n
+      *🔹 Servicio de interés:* ${service}\n
+      *🔹 Mensaje:* \n${message}\n\n
+      *💬 Promesa de privacidad:* \n*Prometemos no divulgar tu información personal a terceros.*
+    `.trim();
+
+    // URL para la API de WhatsApp con el número proporcionado
+    const whatsappURL = `https://wa.me/5493517653221?text=${encodeURIComponent(whatsappMessage)}`;
+
+    // Redirigir al usuario a la API de WhatsApp
+    window.open(whatsappURL, "_blank");
+  });
+</script>
+
             <!-- footer -->
             <footer class="mil-footer mil-p-160-160">
               <div class="container">
