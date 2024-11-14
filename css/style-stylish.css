@@ -6314,3 +6314,16 @@ footer
 .btn:where(:hover, :focus) {
   color: #fff;
 }
+
+
+.text-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+  height: 100vh;           /* Ajusta la altura del contenedor */
+}
+
+.mil-display2 {
+  text-align: center;      /* Centra el texto dentro del <h2> */
+  line-height: 1.2;        /* Ajusta el espaciado entre líneas si es necesario */
+}
