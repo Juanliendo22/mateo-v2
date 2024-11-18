@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../../Desktop/recursos"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "mateo-v2"
+	}
+}
