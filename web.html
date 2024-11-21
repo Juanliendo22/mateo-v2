@@ -115,7 +115,7 @@
                     <a href="index.html" data-no-swup>Inicio</a>
                   </li>
                   <li class="mil-has-children">
-                    <a href="#services">Servicios</a>
+                    <a href="#">Servicios</a>
                     <ul>
                       <li><a href="web.html">Diseño Web</a></li>
                       <li>
@@ -126,10 +126,10 @@
                     </ul>
                    
                   </li>
-                  <a href="contact-stl.html" class="mil-tp-btn">
-  <i class="fal fa-envelope fa-3x"></i>
-</a>
-
+                  <li>
+                    <a href="contact-stl.html" data-no-swup>Contacto</a>
+                  </li>
+                  
                   <a href="https://mateoestudio.v2.project.co/login?from=/projects/list?filters=W3sia2V5Ijoic29ydHMiLCJ2YWx1ZSI6eyJjb2x1bW4iOiJjcmVhdGVkX2F0Iiwib3JkZXIiOiJkZXNjIn19LHsia2V5IjoiY2xvc2VkIiwidmFsdWUiOnsic2hvdyI6ZmFsc2V9fV0=%26localFilters=%26cv=default%26perPage=25%26page=1" target="_blank">
                     <button class="btn" style="margin-top: 20px;">Software</button>
                   </a>
@@ -301,6 +301,8 @@
                         web sea el más cool del internet!
                       </p>
                     </div>
+                   
+
                   </div>
                   <div class="col-md-6">
                     <h3 class="mil-head4 mil-mb30 mil-up">
@@ -387,7 +389,75 @@
               </div>
             </div>
             <!-- service end -->
+            <div class="container"> <div class="faq-container">
+              <div class="faq-item">
+                <button class="faq-question">
+                  ¿Qué incluye la reunión inicial?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  En la reunión inicial, nos aseguramos de entender tus necesidades, captar tus ideas y alinearlas con la implementación del proyecto.
+                </div>
+              </div>
+            
+              <div class="faq-item">
+                <button class="faq-question">
+                  ¿Qué significa el alta de cliente?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  Es el proceso en el que registramos tus datos en nuestro sistema con total confidencialidad, para dar inicio formal al proyecto.
+                </div>
+              </div>
+            
+              <div class="faq-item">
+                <button class="faq-question">
+                  ¿Qué datos necesito proporcionar?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  Necesitamos imágenes, textos, logotipos y cualquier material adicional que desees incluir en tu proyecto para garantizar calidad.
+                </div>
+              </div>
+            
+              <div class="faq-item">
+                <button class="faq-question">
+                  ¿Qué sucede en la primera entrega?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  Te mostramos una versión preliminar de tu sitio web para que puedas revisarla y solicitarnos ajustes según tus necesidades.
+                </div>
+              </div>
+            
+              <div class="faq-item">
+                <button class="faq-question">
+                  ¿Cuánto tiempo toma completar todo el proceso?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  Todo el proceso tiene una duración estimada de 7 días hábiles desde la recolección de datos hasta la primera entrega.
+                </div>
+              </div>
+              <script>document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('pointerdown', () => {
+                  const faqItem = question.parentElement;
+              
+                  // Alternamos la clase "active" para mostrar/ocultar la respuesta
+                  faqItem.classList.toggle('active');
+              
+                  // Ocultar otras respuestas abiertas
+                  document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                      item.classList.remove('active');
+                    }
+                  });
+                });
+              });
+              
+              </script>
 
+            </div></div>
             <!-- subscribe -->
             <div class="container">
               <div class="mil-half-container mil-stl mil-reverse mil-up">

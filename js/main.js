@@ -1264,3 +1264,19 @@ function fadeIn() {
     }
   }, 20);
 }
+let hasShownPopup = false;
+
+window.onscroll = function() {
+  if (!hasShownPopup && (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200)) {
+    // Retraso de 3 segundos (3000 ms)
+    setTimeout(function() {
+      document.getElementById("popup").style.display = "block";
+      hasShownPopup = true;  // Marca que el popup ya se mostró
+    }, 3000);  // Tiempo en milisegundos (3000ms = 3 segundos)
+  }
+};
+
+document.getElementById("close-popup").onclick = function() {
+  document.getElementById("popup").style.display = "none";
+  hasShownPopup = true;  // Evita que el popup vuelva a aparecer después de cerrarlo
+};
